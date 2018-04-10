@@ -4,4 +4,8 @@ class ApplicationController < Sinatra::Base
   set :session_secret, "mtg_deck_secret"
   set :views, Proc.new { File.join(root, "../views/") }
 
+  get '/' do
+    erb :index
+  end
+
 end
