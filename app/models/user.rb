@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :decks
+  has_many :cards, through: :decks
   has_secure_password
   validates :username, presence: true,
     format: {with: /\A[a-zA-Z0-9_-]+\z/, message: "only letters, numbers, dash, and underscore are allowed"},
