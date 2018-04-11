@@ -1,0 +1,6 @@
+<h1><%= @deck.name %></h1>
+<h3>Created by: <%= @deck.user.username %></h3>
+<h3>Format: <%= @deck.format %></h3>
+<% @deck.cards.each do |card| %>
+  <p><%= card.name %></p>
+<% end %>
