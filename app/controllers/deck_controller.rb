@@ -1,7 +1,11 @@
 class DeckController < ApplicationController
 
   get '/decks' do
-    erb :"/decks/decks"
+    if logged_in?
+      erb :"/decks/decks"
+    else
+      redirect '/'
+    end
   end
 
 end
