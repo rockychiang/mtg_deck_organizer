@@ -1,7 +1,7 @@
 class DeckParser
 
   def self.parse(deck, deck_list)
-    list = deck_list.split("\n")
+    list = deck_list.strip.split("\n")
     list.each do |line|
       line.strip!
       name = line.sub(/\A[0-9]+x\s/, "").strip
@@ -16,7 +16,7 @@ class DeckParser
         card.toughness = db_card.toughness
         card.save
       end
-      quantity = line.match(/\A[0-9]+/).strip.to_i
+      quantity = line.match(/\A[0-9]+/)[0].strip.to_i
       deck_cards = DeckCard.find_or_create_by(deck_id: deck.id, card_id: card.id)
       deck_cards.quantity = quantity
       deck_cards.save

@@ -1,8 +1,8 @@
 <h1><%= @deck.name %></h1>
-<h3>Created by: <%= @deck.user.username %></h3>
+<h3>Created by: <a href="/users/<%= @deck.user.username %>"><%= @deck.user.username %></a></h3>
 <h3>Format: <%= @deck.format %></h3>
 <% @deck.cards.each do |card| %>
-  <p><%= card.quantity(@deck.id) %> <%= card.name %></p>
+  <p><%= card.quantity(@deck.id) %>x <%= card.name %></p>
 <% end %>
 <% if @deck.user == current_user %>
   <button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button>
