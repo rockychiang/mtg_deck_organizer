@@ -27,6 +27,14 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
+  get '/signup' do
+    if logged_in?
+      redirect '/decks'
+    else
+      erb :"/users/signup"
+    end
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
