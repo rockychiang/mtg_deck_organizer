@@ -34,7 +34,7 @@ class DecksController < ApplicationController
   patch '/decks/:id' do
     @deck = Deck.find(params[:id])
     @deck.update(params[:deck])
-    DeckParser.parse(@deck, params[:deck_list])
+    DeckParser.run(@deck, params[:deck_list])
     if @deck.save
       redirect "/decks/#{@deck.id}"
     else
