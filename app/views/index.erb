@@ -1,1 +1,14 @@
-<h1>Welcome to the index page</h1>
+<h1>Welcome to Magic the Gathering Deck Organizer</h1>
+
+<form action="/login" method="post">
+  <p>
+    <label for="email">Email: </label>
+    <input id="email" name="email" type="text" required />
+  </p>
+  <p>
+    <label for="password">Password: </label>
+    <input id="password" name="password" type="password" required />
+  </p>
+  <input type="submit" id="Login" value="Log In" />
+</form>
+<p>Don't have a login? <a href="/signup">Sign Up Here</a>.</p>
