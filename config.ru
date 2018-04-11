@@ -1,6 +1,7 @@
 require './config/environment'
 
 use Rack::MethodOverride
-use DeckController
+use DecksController
+use UsersController
 
 run ApplicationController
