@@ -35,6 +35,17 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post '/signup' do
+    params.delete(:captures) if params.key?(:captures) && params[:captures].empty?
+    user = User.new(params)
+    if user.save
+      session[:user_id] = user.id
+      redirect '/decks'
+    else
+      redirect '/signup'
+    end
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
