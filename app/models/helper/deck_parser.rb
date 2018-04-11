@@ -10,12 +10,10 @@ class DeckParser
       if !card.id
         card.cost = db_card.mana_cost
         card.card_type = db_card.types.join(" ")
-        card.card_subtype = db_card.subtypes.join(" ") if !!db_card.subtypes
-        card.card_text = db_card.text if !!db_card.text
-        if db_card.types.include?("Creature")
-          card.power = db_card.power
-          card.toughness = db_card.toughness
-        end
+        card.card_subtype = db_card.subtypes.join(" ")
+        card.card_text = db_card.text
+        card.power = db_card.power
+        card.toughness = db_card.toughness
         card.save
       end
       quantity = line.match(/\A[0-9]+/).strip.to_i

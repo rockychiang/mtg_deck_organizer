@@ -3,9 +3,7 @@
   <h1>Editting <input id="deck_name" name="deck[name]" value="<%= @deck.name %>" /></h1>
   <h3>Format: <input id="deck_format" name="deck[format]" value="<%= @deck.format %>" /></h3>
   <textarea id="deck_list" name="deck_list">
-<% @deck.cards.each do |card| %>
-<%= card.quantity(@deck.id) %>x <%= card.name %>&#13;
-<% end %>
+<% @deck.cards.each do |card| %><%= card.quantity(@deck.id) %>x <%= card.name %>&#13;<% end %>
   </textarea>
   <input type="submit" id="edit_deck" value="Edit Deck" />
 </form>
