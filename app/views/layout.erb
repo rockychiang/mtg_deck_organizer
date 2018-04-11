@@ -4,6 +4,14 @@
     <title>MtG Deck Organizer</title>
   </head>
   <body>
+    <% if logged_in? %>
+      <header>
+        <p>
+          Hi, <%= current_user.username %>
+        </p>
+        <button><a href="/logout">Log Out</a></button>
+      </header>
+    <% end %>
     <%= yield %>
   </body>
 </html>
