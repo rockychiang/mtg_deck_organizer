@@ -1,4 +1,4 @@
-class DeckController < ApplicationController
+class DecksController < ApplicationController
 
   get '/decks' do
     if logged_in?
