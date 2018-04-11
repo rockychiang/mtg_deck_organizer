@@ -4,7 +4,7 @@
   <h3>Format: <input id="deck_format" name="deck[format]" value="<%= @deck.format %>" /></h3>
   <textarea id="deck_list" name="deck_list">
 <% @deck.cards.each do |card| %>
-<%= card.quantity(@deck.id) %> <%= card.name %>&#13;
+<%= card.quantity(@deck.id) %>x <%= card.name %>&#13;
 <% end %>
   </textarea>
   <input type="submit" id="edit_deck" value="Edit Deck" />
