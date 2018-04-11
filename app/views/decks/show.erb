@@ -4,3 +4,6 @@
 <% @deck.cards.each do |card| %>
   <p><%= card.quantity(@deck.id) %> <%= card.name %></p>
 <% end %>
+<% if @deck.user == current_user %>
+  <button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button>
+<% end %>
