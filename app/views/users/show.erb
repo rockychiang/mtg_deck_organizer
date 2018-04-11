@@ -1,0 +1,4 @@
+<h1><%= @user.username %>'s Deck(s):</h1>
+<% @user.decks.each do |deck| %>
+  <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a> - <%= deck.format %></p>
+<% end %>
