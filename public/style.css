@@ -2,6 +2,55 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-button a {
-  text-transform: none;
+header {
+  top: 0;
+  width: 800px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+h1 a {
+  color: #DDD;
+}
+
+header button {
+  height: 1.6em;
+  font-size: 1em;
+  margin-top: 6px;
+  margin-left: 5px;
+  border-radius: 7px;
+  float: right;
+}
+
+header button li {
+  display: inline;
+}
+
+header button a {
+  color: #333;
+}
+
+.black {
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.logo {
+  margin: 0;
+  float: left;
 }
