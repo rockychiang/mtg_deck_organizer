@@ -22,10 +22,10 @@ class Card < ActiveRecord::Base
         self.toughness = db_card.toughness
         self.save
       else
-        raise "No card named #{self.name} found in SDK"
+        nil
       end
     else
-      raise "Can't update card without a name"
+      nil
     end
   end
 

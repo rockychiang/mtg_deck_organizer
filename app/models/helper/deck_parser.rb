@@ -5,7 +5,7 @@ class DeckParser
     if !card_list.include?("error")
       update_deck(deck, card_list)
     else
-      raise "error(s) in deck list"
+      nil
     end
   end
 
@@ -19,7 +19,7 @@ class DeckParser
       quantity = line.to_i
       card = Card.where("name like ?", name).first || Card.build_from_sdk(name: name)
 
-      if card && quantity > 0
+      if card.id && quantity > 0
         [card, quantity]
       else
         "error"
