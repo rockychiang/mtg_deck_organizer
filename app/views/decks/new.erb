@@ -1,7 +1,14 @@
+<h1>New Deck</h1>
+
 <form action="/decks" method="post">
-  <h1>New Deck</h1>
   <h3>Name: <input id="deck_name" name="deck[name]" required /></h3>
   <h3>Format: <input id="deck_format" name="deck[format]" required /></h3>
+
+  <% if !session[:error].nil? %>
+    <p class="error_message">Well there's a problem, <%= session[:error] %></p>
+    <% session[:error] = nil %>
+  <% end %>
+
   <textarea id="deck_list" name="deck_list" cols="50" rows="20"></textarea>
   <p>Formatting: One card per line and specify each card's amount in the beginning of the line. Example: 1x Ezuri, Renegade Leader</p>
   <input type="submit" id="create_deck" value="Create Deck" />

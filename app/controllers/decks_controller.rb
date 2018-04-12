@@ -19,10 +19,11 @@ class DecksController < ApplicationController
 
   post '/decks' do
     deck = current_user.decks.build(params[:deck])
-    DeckParser.run(deck, params[:deck_list])
-    if deck.save
+    if DeckParser.run(deck, params[:deck_list])
+      deck.save
       redirect "/decks/#{deck.id}"
     else
+      session[:error] = "deck list format is wrong, please make sure to have the right format."
       redirect "/decks/new"
     end
   end
@@ -56,6 +57,7 @@ class DecksController < ApplicationController
       deck.save
       redirect "/decks/#{deck.id}"
     else
+      session[:error] = "deck list format is wrong, please make sure to have the right format."
       redirect "/decks/#{deck.id}/edit"
     end
   end

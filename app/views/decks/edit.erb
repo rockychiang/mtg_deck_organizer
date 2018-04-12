@@ -1,8 +1,15 @@
 <h1>Edit Deck</h1>
+
 <form action="/decks/<%= @deck.id %>" method="post">
   <input name="_method" type="hidden" value="patch" />
   <h3>Name: <input id="deck_name" name="deck[name]" value="<%= @deck.name %>" required /></h3>
   <h3>Format: <input id="deck_format" name="deck[format]" value="<%= @deck.format %>" required /></h3>
+
+  <% if !session[:error].nil? %>
+    <p class="error_message">Well there's a problem, <%= session[:error] %></p>
+    <% session[:error] = nil %>
+  <% end %>
+
 <textarea id="deck_list" name="deck_list" cols="50" rows="20">
 <% @deck.cards.each do |card| %><%= card.quantity(@deck.id) %>x <%= card.name %>&#13;<% end %>
 </textarea>
