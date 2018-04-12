@@ -9,6 +9,7 @@ h1, h2, h3, p, ul {
 }
 
 a {
+  color: yellow;
   text-decoration: none;
 }
 
@@ -81,19 +82,30 @@ header button a {
 
 .box {
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px 20px;
   position: relative;
   margin-bottom: 20px;
-  background-color: #111;
+  background-color: #654030;
+  border-style: solid;
   border-radius: 5px;
   border-width: 2px;
-  border-color: white;
+  border-color: #531;
   box-sizing: border-box;
 }
 
 /*              Login                 */
 
 .login {
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: auto;
+}
+
+.login p {
+  margin: .75em 0;
+}
+
+.login #Login {
+  height: 1.7em;
+  font-size: 1em;
+  border-radius: 7px;
 }
