@@ -2,16 +2,18 @@
 <html>
   <head>
     <title>MtG Deck Organizer</title>
+    <link rel="stylesheet" href="style.css" >
   </head>
   <body>
-    <% if logged_in? %>
-      <header>
+    <header>
+      <h1 class="logo"><a href="/">MtG:DO</a></h1>
+      <% if logged_in? %>
         <p>
           Hi, <a href="/users/<%=current_user.username%>"><%= current_user.username %></a>
         </p>
         <button><a href="/logout">Log Out</a></button>
-      </header>
-    <% end %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
