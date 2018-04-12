@@ -82,7 +82,7 @@ header button a {
 
 .box {
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 20px;
   position: relative;
   margin-bottom: 20px;
   background-color: #654030;
@@ -93,6 +93,10 @@ header button a {
   box-sizing: border-box;
 }
 
+.error_message {
+  color: red;
+}
+
 /*              Login                 */
 
 .login {
@@ -101,11 +105,21 @@ header button a {
 }
 
 .login p {
-  margin: .75em 0;
+  margin-bottom: 1em;
+}
+
+.login p.last {
+  margin-bottom: 0;
+}
+
+.login input {
+  font-size: 1em;
+  width: 100%;
 }
 
 .login #Login {
   height: 1.7em;
   font-size: 1em;
   border-radius: 7px;
+  margin: 5px 0;
 }
