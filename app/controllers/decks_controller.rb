@@ -17,6 +17,16 @@ class DecksController < ApplicationController
     end
   end
 
+  post '/decks' do
+    deck = current_user.decks.build(params[:deck])
+    DeckParser.run(deck, params[:deck_list])
+    if deck.save
+      redirect "/decks/#{deck.id}"
+    else
+      redirect "/decks/new"
+    end
+  end
+
   get '/decks/:id' do
     if logged_in?
       @deck = Deck.find(params[:id])

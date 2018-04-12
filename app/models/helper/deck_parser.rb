@@ -31,6 +31,7 @@ class DeckParser
     deck.cards.clear
     card_list.each do |card|
       deck.cards << card[0]
+      deck.save
       deck.deck_cards.find_by(card_id: card[0].id).update(quantity: card[1])
     end
   end
