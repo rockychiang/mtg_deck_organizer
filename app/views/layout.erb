@@ -7,12 +7,14 @@
   <body>
     <div class="black">
       <header>
-        <h1 class="logo"><a href="/">MtG:DO</a></h1>
         <% if logged_in? %>
+          <h1 class="logo"><a href="/">MtG:DO</a></h1>
           <ul>
             <li><button><a href="/logout">Log Out</a></button></li>
             <li><button><a href="/users/<%=current_user.username%>">Profile</a></button></li>
           </ul>
+        <% else %>
+          <h1 class="logo"><a href="/">Magic the Gathering: Deck Orginizer</a></h1>
         <% end %>
       </header>
     </div>
