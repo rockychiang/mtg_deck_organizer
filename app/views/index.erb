@@ -1,5 +1,9 @@
 <h1>Welcome to Magic the Gathering Deck Organizer</h1>
 
+<% if !session[:error].nil? %>
+  <p class="error_message">Well there's a problem, <%= session[:error] %></p>
+  <% session[:error] = nil %>
+<% end %>
 <form action="/login" method="post">
   <p>
     <label for="email">Email: </label>

@@ -10,10 +10,16 @@ class UsersController < ApplicationController
 
   post '/login' do
     user = User.find_by(email: params[:email])
-    if !!user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect '/decks'
+    if !!user
+      if user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect '/decks'
+      else
+        session[:error] = "password did not match our records."
+        redirect '/'
+      end
     else
+      session[:error] = "no user with that email found."
       redirect '/'
     end
   end
