@@ -1,14 +1,11 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
+  color: #DDD;
   background-color: #73503b;
 }
 
-header {
-  top: 0;
-  width: 800px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding-top: 10px;
+h1, h2, h3, p, ul {
+  margin: 0;
 }
 
 a {
@@ -16,12 +13,22 @@ a {
 }
 
 ul {
-  margin: 0;
   list-style-type: none;
 }
 
+/*              Layout                 */
+
 h1 a {
   color: #DDD;
+}
+
+header {
+  top: 0;
+  width: 800px;
+  height: 60px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 header button {
@@ -59,9 +66,34 @@ header button a {
   box-sizing: border-box;
   height: 100%;
   position: relative;
+  margin-top: 50px;
 }
 
 .logo {
   margin: 0;
   float: left;
+}
+
+.not_logged_in {
+  text-align: center;
+  float: none;
+}
+
+.box {
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #111;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: white;
+  box-sizing: border-box;
+}
+
+/*              Login                 */
+
+.login {
+  width: 400px;
+  height: 200px;
 }

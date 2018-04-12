@@ -1,19 +1,21 @@
-<h1>Welcome to Magic the Gathering Deck Organizer</h1>
+<section class="login box">
 
-<% if !session[:error].nil? %>
-  <p class="error_message">Well there's a problem, <%= session[:error] %></p>
-  <% session[:error] = nil %>
-<% end %>
+  <% if !session[:error].nil? %>
+    <p class="error_message">Well there's a problem, <%= session[:error] %></p>
+    <% session[:error] = nil %>
+  <% end %>
 
-<form action="/login" method="post">
-  <p>
-    <label for="email">Email: </label>
-    <input id="email" name="email" type="email" required />
-  </p>
-  <p>
-    <label for="password">Password: </label>
-    <input id="password" name="password" type="password" required />
-  </p>
-  <input type="submit" id="Login" value="Log In" />
-</form>
-<p>Don't have a login? <a href="/signup">Sign Up Here</a>.</p>
+  <form action="/login" method="post">
+    <p>
+      <label for="email">Email: </label>
+      <input id="email" name="email" type="email" required />
+    </p>
+    <p>
+      <label for="password">Password: </label>
+      <input id="password" name="password" type="password" required />
+    </p>
+    <input type="submit" id="Login" value="Log In" />
+  </form>
+  <p>Don't have a login? <a href="/signup">Sign Up Here</a>.</p>
+
+</section>
