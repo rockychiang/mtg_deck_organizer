@@ -1,20 +1,26 @@
 <h1>Sign Up for Magic the Gathering Organizer</h1>
+
+<% if !session[:error].nil? %>
+  <p class="error_message">Well there's a problem, <%= session[:error].join(" and ") %>.</p>
+  <% session[:error] = nil %>
+<% end %>
+
 <form action="/signup" method="post">
   <p>
     <label for="email">Email: </label>
-    <input id="email" name="email" type="email" required />
+    <input id="email" name="user[email]" type="email" required />
   </p>
   <p>
     <label for="email_confirmation">Email Confirmation: </label>
-    <input id="email_confirmation" name="email_confirmation" type="email" required />
+    <input id="email_confirmation" name="user[email_confirmation]" type="email" required />
   </p>
   <p>
     <label for="username">Username: </label>
-    <input id="username" name="username" type="text" required />
+    <input id="username" name="user[username]" type="text" required />
   </p>
   <p>
     <label for="password">Password: </label>
-    <input id="password" name="password" type="password" required />
+    <input id="password" name="user[password]" type="password" required />
   </p>
   <input type="submit" id="Signup" value="Sign Up" />
 </form>

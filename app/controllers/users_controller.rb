@@ -38,12 +38,13 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    params.delete(:captures) if params.key?(:captures) && params[:captures].empty?
-    user = User.new(params)
+    user = User.new(params[:user])
     if user.save
       session[:user_id] = user.id
       redirect '/decks'
     else
+      error = user.errors.messages.map{|k,v| "#{k.to_s} #{v.first}"}
+      session[:error] = error
       redirect '/signup'
     end
   end
