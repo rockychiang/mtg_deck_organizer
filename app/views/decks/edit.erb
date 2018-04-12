@@ -1,9 +1,11 @@
+<h1>Edit Deck</h1>
 <form action="/decks/<%= @deck.id %>" method="post">
   <input name="_method" type="hidden" value="patch" />
-  <h1>Editting <input id="deck_name" name="deck[name]" value="<%= @deck.name %>" required /></h1>
+  <h3>Name: <input id="deck_name" name="deck[name]" value="<%= @deck.name %>" required /></h3>
   <h3>Format: <input id="deck_format" name="deck[format]" value="<%= @deck.format %>" required /></h3>
-  <textarea id="deck_list" name="deck_list">
+<textarea id="deck_list" name="deck_list" cols="50" rows="20">
 <% @deck.cards.each do |card| %><%= card.quantity(@deck.id) %>x <%= card.name %>&#13;<% end %>
-  </textarea>
+</textarea>
+<p>Formatting: One card per line and specify each card's amount in the beginning of the line.<br />Example: 1x Ezuri, Renegade Leader</p>
   <input type="submit" id="edit_deck" value="Edit Deck" />
 </form>
