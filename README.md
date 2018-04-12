@@ -1,10 +1,10 @@
 # MtG Deck Organizer
 
-TODO
+MtG Deck Organizer is a web app that lets you create, edit, and delete a list of your own Decks and also see other decks that other users has created.
 
 ## Installation
 
-TODO
+To install this app, git clone it to your desired folder and then run shotgun or rackup in the terminal to start the app on your local server.
 
 ## Usage
 
