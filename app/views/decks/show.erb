@@ -1,9 +1,11 @@
 <h1><%= @deck.name %></h1>
 <h3>Created by: <a href="/users/<%= @deck.user.username %>"><%= @deck.user.username %></a></h3>
 <h3>Format: <%= @deck.format %></h3>
-<% @deck.cards.each do |card| %>
-  <p><%= card.quantity(@deck.id) %>x <%= card.name %></p>
-<% end %>
+<ul>
+  <% @deck.cards.each do |card| %>
+    <li><%= card.quantity(@deck.id) %>x <%= card.name %></li>
+  <% end %>
+</ul>
 <% if @deck.user == current_user %>
   <button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button>
 <% end %>

@@ -9,6 +9,14 @@ class DecksController < ApplicationController
     end
   end
 
+  get '/decks/new' do
+    if logged_in?
+      erb :"/decks/new"
+    else
+      redirect '/'
+    end
+  end
+
   get '/decks/:id' do
     if logged_in?
       @deck = Deck.find(params[:id])
