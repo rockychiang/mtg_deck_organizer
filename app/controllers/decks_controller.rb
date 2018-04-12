@@ -42,7 +42,7 @@ class DecksController < ApplicationController
       if current_user == @deck.user
         erb :"/decks/edit"
       else
-        redirect :"/decks/#{@deck.id}"
+        redirect "/decks/#{@deck.id}"
       end
     else
       redirect '/'
@@ -57,6 +57,16 @@ class DecksController < ApplicationController
       redirect "/decks/#{@deck.id}"
     else
       redirect "/decks/#{@deck.id}/edit"
+    end
+  end
+
+  delete '/decks/:id/delete' do
+    deck = Deck.find(params[:id])
+    if current_user == deck.user
+      deck.destroy
+      redirect "/decks"
+    else
+      redirect "/decks/#{deck.id}"
     end
   end
 
