@@ -48,6 +48,17 @@ header button a {
   position: fixed;
   height: 60px;
   box-sizing: border-box;
+  z-index: 10;
+}
+
+.brown {
+  background-color: #73503b;
+  top: 60px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .logo {
