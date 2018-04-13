@@ -2,6 +2,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   color: #DDD;
   background-color: #73503b;
+  height: 100%;
 }
 
 h1, h2, h3, p, ul {
@@ -30,6 +31,18 @@ header {
   box-sizing: border-box;
   margin: 0 auto;
   padding-top: 10px;
+}
+
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: #654030;
+  border-top: 1px solid #531;
+  position: absolute;
+  height: 15px;
+  font-size: 0.75em;
 }
 
 header button {
