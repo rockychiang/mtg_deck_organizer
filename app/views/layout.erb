@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>MtG Deck Organizer</title>
     <link rel="stylesheet" href="/style.css" >
   </head>
+
   <body>
+
     <div class="black">
       <header>
         <% if logged_in? %>
           <h1 class="logo"><a href="/">MtG:DO</a></h1>
+
           <ul>
             <li><button><a href="/logout">Log Out</a></button></li>
             <li><button><a href="/users/<%=current_user.username%>">Profile</a></button></li>
@@ -18,11 +22,15 @@
         <% end %>
       </header>
     </div>
+
     <div class="body">
       <%= yield %>
     </div>
+
     <footer>
       &copy; 2018 Rocky Chiang. Magic the Gathering: Deck Editor is not affiliated with Wizards of the Coast.
     </footer>
+
   </body>
+
 </html>

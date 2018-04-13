@@ -1,15 +1,26 @@
-<h1><%= @deck.name %></h1>
-<h3>Created by: <a href="/users/<%= @deck.user.username %>"><%= @deck.user.username %></a></h3>
-<h3>Format: <%= @deck.format %></h3>
-<ul>
-  <% @deck.cards.each do |card| %>
-    <li><%= card.quantity(@deck.id) %>x <%= card.name %></li>
+<section class="title box">
+
+  <h2><%= @deck.name %></h2>
+  <h3>by: <a href="/users/<%= @deck.user.username %>"><%= @deck.user.username %></a><span class="right"><%= @deck.format %></span></h3>
+
+</section>
+
+<section class="content box">
+
+  <ul>
+    <% @deck.cards.each do |card| %>
+      <li><%= card.quantity(@deck.id) %>x <%= card.name %></li>
+    <% end %>
+  </ul>
+
+  <% if @deck.user == current_user %>
+    <ul>
+      <li><button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button></li>
+      <form action="/decks/<%= @deck.id %>/delete" method="post">
+        <input name="_method" type="hidden" value="delete" />
+        <li><input type="submit" id="delete_deck" value="Delete Deck" /></li>
+      </form>
+    </ul>
   <% end %>
-</ul>
-<% if @deck.user == current_user %>
-  <button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button>
-  <form action="/decks/<%= @deck.id %>/delete" method="post">
-    <input name="_method" type="hidden" value="delete" />
-    <input type="submit" id="delete_deck" value="Delete Deck" />
-  </form>
-<% end %>
+
+</section>

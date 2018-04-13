@@ -1,9 +1,14 @@
 <section class="title box">
+
   <h2><%= @user.username %>'s Deck</h2>
   <button><a href="/decks/new">Add New Deck</a></button>
+
 </section>
+
 <section class="content box">
+
   <% @user.decks.each do |deck| %>
-    <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a><span><%= deck.format %></span></p>
+    <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a><span class="right"><%= deck.format %></span></p>
   <% end %>
+
 </section>

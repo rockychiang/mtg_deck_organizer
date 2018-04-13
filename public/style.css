@@ -166,6 +166,6 @@ header button a {
   margin-bottom: 1.5em;
 }
 
-.content span {
+span.right {
   float: right;
 }
