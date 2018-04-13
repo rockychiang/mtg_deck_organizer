@@ -1,5 +1,9 @@
-<h1>Deck List</h1>
-<button><a href="/decks/new">Add New Deck</a></button>
-<% @decks.each do |deck| %>
-  <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a> - <%= deck.format %></p>
-<% end %>
+<section class="title box">
+  <h2>Deck List</h2>
+  <button><a href="/decks/new">Add Deck</a></button>
+</section>
+<section class="content box">
+  <% @decks.each do |deck| %>
+    <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a> - <%= deck.format %></p>
+  <% end %>
+</section>
