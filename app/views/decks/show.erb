@@ -10,7 +10,7 @@
   <ul>
     <% ["Creature", "Artifact Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land"].each do |type| %>
       <% if @deck.cards.where(card_type: type).count > 0 %>
-        <li><%= type %>:</li>
+        <li><%= type == "Sorcery" ? "Sorcerie" : type%>s:</li>
         <% @deck.cards.where(card_type: type).each do |card| %>
           <li><%= card.quantity(@deck.id) %>x <%= card.name %></li>
         <% end %>

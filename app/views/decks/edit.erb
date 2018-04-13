@@ -15,7 +15,7 @@
     <% session[:error] = nil %>
   <% end %>
 
-  <textarea id="deck_list" name="deck_list" rows="25">
+  <textarea id="deck_list" name="deck_list" rows="20">
 <% @deck.cards.each do |card| %><%= card.quantity(@deck.id) %>x <%= card.name %>&#13;<% end %>
   </textarea>
 
