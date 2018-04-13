@@ -5,7 +5,7 @@
 
 </section>
 
-<section class="content box">
+<section class="deck content box">
 
   <ul>
     <% @deck.cards.each do |card| %>
@@ -13,14 +13,19 @@
     <% end %>
   </ul>
 
-  <% if @deck.user == current_user %>
+</section>
+
+
+<% if @deck.user == current_user %>
+  <section class="button box">
+
     <ul>
-      <li><button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button></li>
       <form action="/decks/<%= @deck.id %>/delete" method="post">
         <input name="_method" type="hidden" value="delete" />
         <li><input type="submit" id="delete_deck" value="Delete Deck" /></li>
       </form>
+      <li><button><a href="/decks/<%= @deck.id %>/edit">Edit Deck</a></button></li>
     </ul>
-  <% end %>
 
-</section>
+  </section>
+<% end %>
