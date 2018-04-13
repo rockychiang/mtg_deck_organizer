@@ -147,8 +147,30 @@ button a {
 
 /*           Index & Profile          */
 
+.title.box, .content.box, .button.box{
+  width: 80%;
+}
+
+span.right {
+  float: right;
+}
+
 .title h2 {
   display: inline;
+}
+
+.title input {
+  font-size: 1.25em;
+  height: 1.4em;
+}
+
+.title input#deck_name {
+  width: 72%
+}
+
+.title input#deck_format {
+  float: right;
+  width: 25%
 }
 
 .title button {
@@ -156,10 +178,6 @@ button a {
   font-size: 1em;
   border-radius: 7px;
   float: right;
-}
-
-.title.box, .content.box, .button.box{
-  width: 80%;
 }
 
 .content.box {
@@ -170,8 +188,12 @@ button a {
   margin-bottom: 1.5em;
 }
 
-span.right {
-  float: right;
+.content textarea {
+  width: 100%;
+}
+
+.content p.formatting {
+  font-size: 0.75em;
 }
 
 .deck.content.box {
@@ -179,7 +201,7 @@ span.right {
   column-count: 2;
 }
 
-.button.box button, input{
+.button.box button, .button.box input{
   top: -13px;
   position: relative;
   margin-left: 5px;
