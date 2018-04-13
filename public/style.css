@@ -153,3 +153,19 @@ header button a {
 .title button a {
   color: #111;
 }
+
+.title.box, .content.box{
+  width: 80%;
+}
+
+.content.box {
+  padding-bottom: 0;
+}
+
+.content p {
+  margin-bottom: 1.5em;
+}
+
+.content span {
+  float: right;
+}

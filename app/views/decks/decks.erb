@@ -4,6 +4,6 @@
 </section>
 <section class="content box">
   <% @decks.each do |deck| %>
-    <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a> - <%= deck.format %></p>
+    <p><a href="/decks/<%= deck.id %>"><%= deck.name %></a> by <a href="/users/<%= deck.user.username %>"><%= deck.user.username %></a> <span class="right"><%= deck.format %></span></p>
   <% end %>
 </section>
