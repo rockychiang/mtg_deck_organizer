@@ -1,27 +1,21 @@
-<h1>Sign Up for Magic the Gathering Organizer</h1>
+<section class="login box">
 
-<% if !session[:error].nil? %>
-  <p class="error_message">Well there's a problem, <%= session[:error].join(" and ") %>.</p>
-  <% session[:error] = nil %>
-<% end %>
+  <% if !session[:error].nil? %>
+    <p class="error_message">Well there's a problem, <%= session[:error].join(" and ") %>.</p>
+    <% session[:error] = nil %>
+  <% end %>
 
-<form action="/signup" method="post">
-  <p>
-    <label for="email">Email: </label>
-    <input id="email" name="user[email]" type="email" required />
-  </p>
-  <p>
-    <label for="email_confirmation">Email Confirmation: </label>
-    <input id="email_confirmation" name="user[email_confirmation]" type="email" required />
-  </p>
-  <p>
-    <label for="username">Username: </label>
-    <input id="username" name="user[username]" type="text" required />
-  </p>
-  <p>
-    <label for="password">Password: </label>
-    <input id="password" name="user[password]" type="password" required />
-  </p>
-  <input type="submit" id="Signup" value="Sign Up" />
-</form>
-<p>Already signed up? <a href="/">Log In Here</a>.</p>
+  <form action="/signup" method="post">
+    <p><label for="email">Email: </label></p>
+    <p><input id="email" name="user[email]" type="email" required /></p>
+    <p><label for="email_confirmation">Email Confirmation: </label></p>
+    <p><input id="email_confirmation" name="user[email_confirmation]" type="email" required /></p>
+    <p><label for="username">Username: </label></p>
+    <p><input id="username" name="user[username]" type="text" required /></p>
+    <p><label for="password">Password: </label></p>
+    <p><input id="password" name="user[password]" type="password" required /></p>
+    <p><input type="submit" id="Login" value="Sign Up" /></p>
+  </form>
+  <p class="last">Already signed up? <a href="/">Log In Here</a>.</p>
+
+</section>
