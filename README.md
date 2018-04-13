@@ -8,7 +8,7 @@ To install this app, git clone it to your desired folder and then run shotgun or
 
 ## Usage
 
-TODO
+https://youtu.be/g99BkszLstI
 
 ## Contributing
 
