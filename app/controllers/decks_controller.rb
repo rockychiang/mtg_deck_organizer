@@ -52,13 +52,17 @@ class DecksController < ApplicationController
 
   patch '/decks/:id' do
     deck = Deck.find(params[:id])
-    deck.update(params[:deck])
-    if DeckParser.run(deck, params[:deck_list])
-      deck.save
-      redirect "/decks/#{deck.id}"
+    if current_user == deck.user
+      deck.update(params[:deck])
+      if DeckParser.run(deck, params[:deck_list])
+        deck.save
+        redirect "/decks/#{deck.id}"
+      else
+        session[:error] = "deck list format is wrong, please make sure to have the right format."
+        redirect "/decks/#{deck.id}/edit"
+      end
     else
-      session[:error] = "deck list format is wrong, please make sure to have the right format."
-      redirect "/decks/#{deck.id}/edit"
+      redirect "/decks/#{deck.id}"
     end
   end
 
